@@ -6,3 +6,5 @@ const router = express.Router();
 router.get('/', (request, response) => {
     response.send('Welcome to my first Nodejs server !')
 });
+
+module.exports = router;
