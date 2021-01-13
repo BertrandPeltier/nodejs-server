@@ -1,3 +1,5 @@
+// My first nodejs server !
+
 // Modules import
 require('dotenv').config();
 
