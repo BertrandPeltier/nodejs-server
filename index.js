@@ -11,7 +11,7 @@ const app = express();
 const router = require('./app/router');
 
 // Static files folder
-app.use(express.static('./app/public'));
+app.use(express.static('./public'));
 
 // Routing
 app.use(router);
@@ -21,7 +21,5 @@ app.use((request, response) => {
   response.status(404).send('Error 404 - This page does not exist.');
 });
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`Listening on ${process.env.PORT || 3000}`);
-  });
+app.listen();
   
