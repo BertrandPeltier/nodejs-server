@@ -10,6 +10,15 @@ const app = express();
 // router import
 const router = require('./app/router');
 
+// Port setup
+const PORT = process.env.PORT || 3000;
+
+// Templates engine setup
+app.set('view engine', 'ejs');
+
+// Templates folder
+app.set('views', './views');
+
 // Static files folder
 app.use(express.static('./public'));
 
@@ -18,8 +27,11 @@ app.use(router);
 
 // 404
 app.use((request, response) => {
-  response.status(404).send('Error 404 - This page does not exist.');
+  response.status(404).render('404');
 });
 
-app.listen();
+// Launch server
+app.listen(PORT, () => {
+  console.log(`Listening on http://localhost:${PORT}`);
+});
   
