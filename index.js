@@ -22,6 +22,9 @@ app.set('views', './views');
 // Static files folder
 app.use(express.static('./public'));
 
+// Static files folder - Front development
+app.use(express.static('./www'));
+
 // Routing
 app.use(router);
 
