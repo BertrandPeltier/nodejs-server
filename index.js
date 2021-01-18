@@ -5,6 +5,8 @@ require('dotenv').config();
 
 const express = require('express');
 
+const serveIndex = require('serve-index');
+
 const app = express();
 
 // router import
@@ -19,11 +21,8 @@ app.set('view engine', 'ejs');
 // Templates folder
 app.set('views', './views');
 
-// Static files folder
-app.use(express.static('./public'));
-
 // Static files folder - Front development
-app.use(express.static('./www'));
+app.use('/www', express.static('public/www'), serveIndex('public/www', {'icons': true, stylesheet: 'public/css/style.css'}))
 
 // Routing
 app.use(router);
