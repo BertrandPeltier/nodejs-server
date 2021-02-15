@@ -13,7 +13,7 @@ const app = express();
 const router = require('./app/router');
 
 // Port setup
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // Templates engine setup
 app.set('view engine', 'ejs');
